@@ -1,5 +1,5 @@
 {
-  "name": "thiagotoledo/Copacabana",
+  "name": "thiagotoledo/copacabana",
   "description": "Light Stalk Framework Class",
   "authors": [
     {
@@ -16,9 +16,10 @@
   },
   "autoload": {
     "psr-4": {
-      "Copacabana\\helpers\\": "app/helpers/",
+      "Copacabana\\app\\helpers\\": "app/helpers/",
       "Copacabana\\tests\\app\\helpers\\": "tests/app/helpers/",
-      "Copacabana\\tests\\selenium\\": "tests/selenium/"
+      "Copacabana\\tests\\selenium\\": "tests/selenium/",
+      "Copacabana\\tests\\AppSeleniumTests\\controllers\\": "tests/AppSeleniumTests/Controllers/"
     }
   }
 }
