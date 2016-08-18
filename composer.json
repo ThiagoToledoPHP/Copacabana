@@ -1,0 +1,24 @@
+{
+  "name": "thiagotoledo/Copacabana",
+  "description": "Light Stalk Framework Class",
+  "authors": [
+    {
+      "name": "Thiago Toledo",
+      "email": "javaephp@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.17"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.0",
+    "phpunit/phpunit-selenium": ">=1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Copacabana\\helpers\\": "app/helpers/",
+      "Copacabana\\tests\\app\\helpers\\": "tests/app/helpers/",
+      "Copacabana\\tests\\selenium\\": "tests/selenium/"
+    }
+  }
+}
