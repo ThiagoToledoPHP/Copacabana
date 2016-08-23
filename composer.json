@@ -11,15 +11,11 @@
     "php": ">=5.3.17"
   },
   "require-dev": {
-    "phpunit/phpunit": "4.0",
-    "phpunit/phpunit-selenium": ">=1.2"
   },
   "autoload": {
     "psr-4": {
       "Copacabana\\helpers\\": "app/Helpers/",
-      "Copacabana\\tests\\app\\helpers\\": "tests/app/helpers/",
-      "Copacabana\\tests\\selenium\\": "tests/selenium/",
-      "TestCopacabana\\app\\Controllers\\": "tests/AppSeleniumTests/app/Controllers/"
+      "TestCopacabana\\app\\Controllers\\": "examples/example1/app/Controllers/"
     }
   }
 }
