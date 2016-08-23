@@ -16,10 +16,10 @@
   },
   "autoload": {
     "psr-4": {
-      "Copacabana\\app\\helpers\\": "app/helpers/",
+      "Copacabana\\helpers\\": "app/Helpers/",
       "Copacabana\\tests\\app\\helpers\\": "tests/app/helpers/",
       "Copacabana\\tests\\selenium\\": "tests/selenium/",
-      "Copacabana\\tests\\AppSeleniumTests\\controllers\\": "tests/AppSeleniumTests/Controllers/"
+      "TestCopacabana\\app\\controllers\\": "tests/AppSeleniumTests/app/Controllers/"
     }
   }
 }
