@@ -1,6 +1,6 @@
 <?php
 
-namespace TestCopacabana\app\controllers{
+namespace TestCopacabana\app\Controllers{
 
     class NotFound
     {

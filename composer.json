@@ -19,7 +19,7 @@
       "Copacabana\\helpers\\": "app/Helpers/",
       "Copacabana\\tests\\app\\helpers\\": "tests/app/helpers/",
       "Copacabana\\tests\\selenium\\": "tests/selenium/",
-      "TestCopacabana\\app\\controllers\\": "tests/AppSeleniumTests/app/Controllers/"
+      "TestCopacabana\\app\\Controllers\\": "tests/AppSeleniumTests/app/Controllers/"
     }
   }
 }

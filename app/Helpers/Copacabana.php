@@ -24,7 +24,7 @@ class Copacabana
         $this->appName = $appName;
 
         //Default setup
-        $this->dirControllers = "app/controllers/";
+        $this->dirControllers = "app/Controllers/";
         $this->mainMethodController = "main";
         $this->notFoundController = "NotFound";
         $this->psrLogObject = null;
@@ -71,14 +71,18 @@ class Copacabana
             //If send more than one url arg...
             if (is_array($arrayGetArgs) && sizeof($arrayGetArgs) > 0) {
 
+
+
                 if($this->isCamelCase === false)
                     $controllerClassFileName = $arrayGetArgs[0];
                 else
                     $controllerClassFileName = ucfirst($arrayGetArgs[0]);
 
 
+
                 //The project search for a file with the arg data, position zero, first caracter Caps
                 $urlFile = $this->dirControllers.$controllerClassFileName.".php";
+
 
                 //File exists
                 if (is_file($urlFile)) {
