@@ -6,7 +6,7 @@ namespace TestCopacabana\app\Controllers{
     {
 
         public function main(){
-            echo ":)";
+            echo "<html><body><span id='smile'>:)</span></body></html>";
         }
 
     }
