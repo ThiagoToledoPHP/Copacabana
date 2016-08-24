@@ -22,6 +22,7 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase
     {
         $this->setBrowser('firefox');
         $this->setBrowserUrl('http://www.example.com/');
+        $this->assertEquals('Example Domain', $this->title());
     }
 
     /**
