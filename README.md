@@ -7,7 +7,7 @@ Based on this I created a class that has the main purpose of enabling you to cre
 
 **Installing**
 
-To get started, simply use the composer to import the class to your project. You can [view here]((https://packagist.org/packages/thiagotoledo/copacabana)) Packagist page design , and soon , there were releases so you can do it more safely . 
+To get started, simply use the composer to import the class to your project. You can [view here](https://packagist.org/packages/thiagotoledo/copacabana) Packagist page design , and soon , there were releases so you can do it more safely . 
 For now you can go have fun , experimenting on study projects.
 
 **Use**
