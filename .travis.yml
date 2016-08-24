@@ -6,7 +6,7 @@ before_script:
   - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar"
   - "java -jar selenium-server-standalone-2.39.0.jar > /tmp/selenium.log 2> /tmp/selenium.error &"
   - composer install
-  - php -S localhost:8000 -t home/travis/build/ThiagoToledoPHP/Copacabana/ &
+  - php -S localhost:8000 -t ./ &
 language: php
 php:
   - 5.4
