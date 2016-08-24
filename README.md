@@ -22,4 +22,4 @@ In the examples project folder, you can get ideas on how to use the project simp
 6. Great! You now can create your own classes. By default, the name of the class follows the standard [CamelCase](http://searchsoa.techtarget.com/definition/UpperCamelCase), keeping the capital letter at the beginning of the files and the names of classes. Do not forget the main and good fun method. :)
 
 **Important**
-_This is the beginning of the project , hope you enjoy and use is for now only ok study projects? Thank you_
+_This is the beginning of the project , hope you enjoy and use is only for now study projects, ok? Thank you_
