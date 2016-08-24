@@ -20,7 +20,6 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase
      */
     protected function setUp()
     {
-        $this->setPort(8000);
         $this->setBrowser('firefox');
         $this->setBrowserUrl('http://www.example.com/');
     }
@@ -42,13 +41,11 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->assertEquals(':)', $this->byId('smile')->text());
     }
 
-    /*
     public function testTitle3()
     {
         $this->url(URL_SELENIUM_ACCESS."t");
         $this->assertEquals(':P', $this->byId('smile')->text());
     }
-    */
 
 
 }
