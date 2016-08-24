@@ -1,6 +1,7 @@
 services:
 
 before_script:
+  - sudo a2enmod rewrite
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar"
