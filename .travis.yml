@@ -1,6 +1,10 @@
 services:
-
+install:
+  -- sudo apt-get install apache2 libapache2-mod-fastcgi > /dev/null
 before_script:
+  - sudo a2enmod rewrite actions fastcgi alias
+  - sudo a2enmod rewrite
+  - sudo service apache2 restart
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar"
