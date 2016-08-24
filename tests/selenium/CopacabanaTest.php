@@ -43,7 +43,7 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase
 
     public function testTitle3()
     {
-        $this->url(URL_SELENIUM_ACCESS."t");
+        $this->url(URL_SELENIUM_ACCESS."?url=t");
         $this->assertEquals(':P', $this->byId('smile')->text());
     }
 
