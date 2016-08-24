@@ -1,6 +1,6 @@
 services:
 install:
-  -- sudo apt-get install apache2 libapache2-mod-fastcgi > /dev/null
+  - sudo apt-get install apache2 libapache2-mod-fastcgi > /dev/null
 before_script:
   - sudo a2enmod rewrite actions fastcgi alias
   - sudo a2enmod rewrite
