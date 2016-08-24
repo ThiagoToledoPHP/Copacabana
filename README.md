@@ -1,4 +1,4 @@
-# Copacabana
+# Copacabana [![Build Status](https://travis-ci.org/ThiagoToledoPHP/Copacabana.svg?branch=master)](https://travis-ci.org/ThiagoToledoPHP/Copacabana)
 This is a Light Stalk [Composer](https://getcomposer.org/) Framework Class project.
 
 By [definition](https://pt.wikipedia.org/wiki/Framework) , a framework is a set of codes that dictates the application of flow control.
