@@ -1,18 +1,12 @@
 services:
 
 before_script:
-  - sudo apt-get update > /dev/null
-  - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-mysql php5-intl
-  - sudo sed -i -e "/DocumentRoot/i\ServerName knpu_qa.l" /etc/apache2/sites-available/default
-  - echo "127.0.0.1 knpu_qa.l" | sudo tee -a /etc/hosts
-  - sudo /etc/init.d/apache2 restart
-  - travis_retry composer self-update
-  - composer install --dev
-  - "sh -e /etc/init.d/xvfb start"
   - "export DISPLAY=:99.0"
-  - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.31.0.jar"
-  - "java -jar selenium-server-standalone-2.31.0.jar > /dev/null &"
-  - sleep 5
+  - "sh -e /etc/init.d/xvfb start"
+  - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar"
+  - "java -jar selenium-server-standalone-2.39.0.jar > /tmp/selenium.log 2> /tmp/selenium.error &"
+  - composer install
+  - php -S localhost:8000 -t public/ &
 language: php
 php:
   - 5.4
