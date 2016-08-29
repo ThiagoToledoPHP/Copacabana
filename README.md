@@ -21,5 +21,8 @@ In the examples project folder, you can get ideas on how to use the project simp
 5. Now just enter the address of your project: At the root of the Index.php class will be called. If you add some information over the NotFound.php class will be called;
 6. Great! You now can create your own classes. By default, the name of the class follows the standard [CamelCase](http://searchsoa.techtarget.com/definition/UpperCamelCase), keeping the capital letter at the beginning of the files and the names of classes. Do not forget the main and good fun method. :)
 
+###Detail documentation
+Access information about all class public methods **[click here](https://rawgit.com/ThiagoToledoPHP/Copacabana/master/docs/index.html)** or access with browser the docs directory.
+
 **Important**
 _This is the beginning of the project , hope you enjoy and use is only for now study projects, ok? Thank you_

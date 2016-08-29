@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.8.5">
+  <partials/>
+  <file path="Copacabana.php" generated-path="Copacabana.html" hash="7bf24be2c089e4091768981be4ff60de" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Copacabana\helpers" line="13" package="Copacabana\helpers">
+      <extends/>
+      <name>Copacabana</name>
+      <full_name>\Copacabana\helpers\Copacabana</full_name>
+      <docblock line="13">
+        <description>Light Stalk Composer Framework Class</description>
+        <long-description></long-description>
+        <tag name="autor" line="13" description="Thiago Toledo"/>
+        <tag name="email" line="13" description="javaephp@gmail.com"/>
+        <tag name="link" line="13" description="https://github.com/ThiagoToledoPHP/Copacabana" link="https://github.com/ThiagoToledoPHP/Copacabana"/>
+        <tag name="package" line="13" description="Copacabana\helpers"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="Copacabana\helpers" line="17" package="Copacabana\helpers">
+        <name>$dirControllers</name>
+        <full_name>\Copacabana\helpers\Copacabana::dirControllers</full_name>
+        <default></default>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="17" description="&lt;p&gt;The directory of your controllers class&lt;/p&gt;" type="string" variable="$dirControllers">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Copacabana\helpers" line="20" package="Copacabana\helpers">
+        <name>$mainMethodController</name>
+        <full_name>\Copacabana\helpers\Copacabana::mainMethodController</full_name>
+        <default></default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="20" description="&lt;p&gt;Main method name in controllers class&lt;/p&gt;" type="string" variable="$mainMethodController">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Copacabana\helpers" line="23" package="Copacabana\helpers">
+        <name>$notFoundController</name>
+        <full_name>\Copacabana\helpers\Copacabana::notFoundController</full_name>
+        <default></default>
+        <docblock line="23">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="23" description="&lt;p&gt;Not found controller file and class&lt;/p&gt;" type="string" variable="$notFoundController">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Copacabana\helpers" line="26" package="Copacabana\helpers">
+        <name>$indexController</name>
+        <full_name>\Copacabana\helpers\Copacabana::indexController</full_name>
+        <default></default>
+        <docblock line="26">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="26" description="&lt;p&gt;Index (main) controller file and class&lt;/p&gt;" type="string" variable="$indexController">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Copacabana\helpers" line="29" package="Copacabana\helpers">
+        <name>$appName</name>
+        <full_name>\Copacabana\helpers\Copacabana::appName</full_name>
+        <default></default>
+        <docblock line="29">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="29" description="&lt;p&gt;App name&lt;/p&gt;" type="string" variable="$appName">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="Copacabana\helpers" line="32" package="Copacabana\helpers">
+        <name>$isCamelCase</name>
+        <full_name>\Copacabana\helpers\Copacabana::isCamelCase</full_name>
+        <default></default>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="32" description="&lt;p&gt;Camel Case option&lt;/p&gt;" type="boolean" variable="$isCamelCase">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="44" package="Copacabana\helpers">
+        <name>__construct</name>
+        <full_name>\Copacabana\helpers\Copacabana::__construct()</full_name>
+        <docblock line="44">
+          <description>Copacabana constructor.</description>
+          <long-description>In $appName you must use the same name used in the first part of the namespace of your control classes
+to Copacabana dynamically call them in your application using Composer.
+Simple pedagogic example:
+if you use $appName = "Copacabana"
+in composer file (autoload / psr-4) you can use: "Copacabana\\helpers\\": "app/Helpers/"</long-description>
+          <tag name="param" line="44" description="&lt;p&gt;The name of your app. The first part of composer namespace class.&lt;/p&gt;" type="string" variable="$appName">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$appName</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="61" package="Copacabana\helpers">
+        <name>setAppName</name>
+        <full_name>\Copacabana\helpers\Copacabana::setAppName()</full_name>
+        <docblock line="61">
+          <description>Determine the app name</description>
+          <long-description></long-description>
+          <tag name="param" line="61" description="&lt;p&gt;The name of your app. The first part of composer namespace class.&lt;/p&gt;" type="string" variable="$appName">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$appName</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="77" package="Copacabana\helpers">
+        <name>setDirControllers</name>
+        <full_name>\Copacabana\helpers\Copacabana::setDirControllers()</full_name>
+        <docblock line="77">
+          <description>This method is used to set the directory of your controllers class.</description>
+          <long-description>Example of bars format: "app/Controllers/"
+Important: They should also be in the declaration of its namespace in the composer file
+Simple pedagogic example:
+if you use $dirControllers = "app/Controllers/"
+in composer file (autoload / psr-4) you can use:
+"Copacabana\\app\\Controllers\\": "yourDirNameIfYouNeed/app/Controllers/"</long-description>
+          <tag name="param" line="77" description="&lt;p&gt;The directory way to your controllers&lt;/p&gt;" type="string" variable="$dirControllers">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$dirControllers</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="86" package="Copacabana\helpers">
+        <name>setMainControllers</name>
+        <full_name>\Copacabana\helpers\Copacabana::setMainControllers()</full_name>
+        <docblock line="86">
+          <description>Used to determine the method Name in controller class to respond to app requests</description>
+          <long-description></long-description>
+          <tag name="param" line="86" description="&lt;p&gt;The method name used in your controller class to respond to app requests&lt;/p&gt;" type="" variable="$mainMethodController"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$mainMethodController</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="95" package="Copacabana\helpers">
+        <name>setNotFoundController</name>
+        <full_name>\Copacabana\helpers\Copacabana::setNotFoundController()</full_name>
+        <docblock line="95">
+          <description>Use to determine the controller class Name to respond not found requests</description>
+          <long-description></long-description>
+          <tag name="param" line="95" description="&lt;p&gt;The class name to 404 requests&lt;/p&gt;" type="string" variable="$notFoundController">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$notFoundController</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="106" package="Copacabana\helpers">
+        <name>isCamelCase</name>
+        <full_name>\Copacabana\helpers\Copacabana::isCamelCase()</full_name>
+        <docblock line="106">
+          <description>Use to determine if you use or not to Camel Case in your controllers
+If set true, automatically automatically includes the first letter to uppercase the url requests control classes
+Pedagogic example: in example url: www.test.com/example the class file and name Example is request</description>
+          <long-description></long-description>
+          <tag name="param" line="106" description="&lt;p&gt;Determine if you use or not to Camel Case in your controllers class&lt;/p&gt;" type="boolean" variable="$isCamelCase">
+            <type>boolean</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$isCamelCase</name>
+          <default></default>
+          <type>boolean</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="115" package="Copacabana\helpers">
+        <name>setIndexController</name>
+        <full_name>\Copacabana\helpers\Copacabana::setIndexController()</full_name>
+        <docblock line="115">
+          <description>Used to determine the method Name in controller class to respond to index requests</description>
+          <long-description></long-description>
+          <tag name="param" line="115" description="&lt;p&gt;The method name used in your controller class to respond to index requests&lt;/p&gt;" type="" variable="$indexController"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$indexController</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="123" package="Copacabana\helpers">
+        <name>listen</name>
+        <full_name>\Copacabana\helpers\Copacabana::listen()</full_name>
+        <docblock line="123">
+          <description>Method used to start router the app requisitions</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+    </parse_markers>
+    <source>eJzFWEtv2zgQvutXEEbQyoUr9dBTsu62SPoI0AYFmh4WTRHQEm2zlUQtScV1i/z3nSH1Fumk2y3Wh8Qmh/P45pvhSH/8WW7LIChozlRJE0ZOBfyjK1rQqy3LSibVSRDEjx4F5BF5yzdbTT5omn0FubwUiknySsLZnZCwlFGlQA5Fn9NKC0kut5xuBLkUGUuFWWc55Rn5Qm8oA8vPN/gzSkRuNjNefCVbrUt1HMcbrrfVCvdiq8Zqef/mfdw5aY7Bj6904/IdtuMgQb96m8GPICDwgajI8xsqidKSFxtylHJ5KgotRZbBWXCeEVhiCUSyJ2JN9qKSJOlJWM1gAtWVkt9QzcZqTjzGIPDiHdNbkXbC5B0sktysEswJgZ93G3Sp8pkthH4lqqJv9EJossa1nimy5hkjFNecJqdqfAZ5kbJvPWvn+JuE6PP8JwyO1Pis0bK8QNxelKUFcKynFhifXwkgFy3AjjqF7eyUKuATfiPmqyg1F8XUq06602j+Ay87xmGc4GGFTIqa7fOicxeYRfJKaVKBLQ28U7hqAoCVFGmAq2suQaakUiMdcaUr3BE/LYxMNda06PuT7uEgT2iW7Qn+RV05WjEqwKsMNk3ElUJcm2pvnf/A8xLyVbIUCnPDE8K+UVw5bgS4ccfE00a5JLPOh1kriRSvm4khQYi9IxM0JTEplXz8dG5UJRS9Ycd9JVdNoV9dzWADDMVv7ELc6G/MQJeATjUhymUNYosfbERmdQh262KHuEG4QaQmRrUC5Mi6KhKD3vV1m/mwMTk3kj/sOfgc6S1Xj58ppl9YgU6y5pThVXzG1rTKNAHBqnScPhu0ndCA0VuIZ6Buego7zuAYFqZb9GJS8+GsWXOc6NVGCAgwp87zYVmHM7PQaLsNJkV1xjSTOS9smdC6zP/XJLsy585xVwhdH6rjHIUJN55qLgL4ZpoAlDCYMnHf41pqS/WlrUyUXFHYXQuZU11Xy4AgbWcCFKSmBQgBRnuitqLKUkIzJciKNc0oZWBH2i4BurlWPdhqmUFh/6veMbqTlwfc/tlG0pwb9BPQfnXVU28bC0IM9YUZO1//JaoLxtLY54iHjAenix3dY37HqbyLd6OaH9nwsHAC6WRicXPyY03CdFCCNUkvJtNKfZHDAQmkEIU5iwUr2d8VU1qNcHJPRJedicF1OELqvsa8SI77oNMbD6BOx5e+ucwL7hTbSXwG5V6QRTu6eUA9MPYhslZrUWt9+uTpvfFyXAYOIx7AHN4s3TPlPcHqdQx46kBUcN7pxrcpYVqgzte2q8INtSDYMKA51pPR8BcvkqxKmepNYhnT4AHaqkoYOhJaT2+VzFogfQPZ+0n7Qy/r76jhmOx2u0iDDvMM1OzoNm3txGzy17R5uC1q0yMqOEfcs1+B0PpxkCn9IaBv2EOMvmvL0Xj9+5qSebbwtqXxA8yvdCSnJW+NjYejsSs+EEcOLx1PT24wbbPqpg2Nc5EUlSF5PW6h81xx9PFwABlXmhVh42TnZYeReWPwCmjcPB7MehMvEDLkUDEwOV+/fnk5Jw8eAJ2uqZR031tS/DsT62bhGXky7yFi4os/MEyl7mqTyo3ClBGjbCB9ZJZew0iHMksoyDITKQtn8WxBjJFPD0HFw8/94dyaMZ0E8pwLiaag1ETR2ouiaCBuo2ui6RsdRDXccETX6HIV0HJJ1jC0MdeZOzIxMPzpyeeTiYJbwkD1z2uuEtM7w7GFucNEEASTxTjGAiyl+AKjEwBOZbLFmZZQ2xB3XG8tWeWGpFTTBYGR0PCVfGdSLOrenQAlEiT2KS3VxMoRpA2dRihcU1PkizCaReW2RB47PDca2Tfe1v4oiUAIjCFsrM+9mVvzgmbGcJOwwRNGNIO5NYLL/1qyMoOB3PIXVxfugOaR09ChZJ5MQ7RhnsMjLy0SjiWH95OpihtOie2o9fsGsoFrFxNk96EcDSPq55OofRWSd+/E3FgcIFvBdmOsQgfRDqp5/OzHgTnvdlSjflDWJBXFQ13nv6brwr7t2UOrzNuIu6nO3iHhuOX3P4frsJ2pplTxjVsTHQa/C7+i38I5v4+e7Lki7dI/cT/0Z+qjeeV1P+pNrN7FFr9ZQlMc4xMhUzM2oAOZ2Di64uCXL/1x/FZsgGUrmvbv7AVR9KaJjxZYa5mpwqFWx91m2WtqFUq2ZFDf3U0Ktbwg5lEb9doxZzILYS84VNXOWI6S/5Rx7hlpyHw7LjX8SXydw4rdI+HDzN0Gt8E/+v7fIw==</source>
+  </file>
+  <package name="Copacabana" full_name="Copacabana">
+    <package name="helpers" full_name="Copacabana\helpers"/>
+  </package>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="Copacabana" full_name="Copacabana">
+    <namespace name="helpers" full_name="Copacabana\helpers"/>
+  </namespace>
+  <deprecated count="0"/>
+</project>

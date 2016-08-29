@@ -1,0 +1,142 @@
+html{
+    font-family: 'Open Sans', sans-serif;
+    border-left: solid 5px #ff6633;
+    word-wrap: break-word;
+    font-style: italic;
+    color: #333;
+}
+
+.projectName{
+    margin-bottom: 5px;
+}
+
+.projectName a{
+    color: #ff6633;
+    font-style: normal;
+}
+
+.methodElementName{
+    color: #ff6633;
+}
+
+.projectFullName{
+    color:#555555;
+    font-size:13px;
+    margin-bottom: 30px;
+}
+
+.projectDescription{
+
+}
+
+.methodElement{
+    border-top: solid 1px #eaebe6;
+    margin-top: 50px;
+    padding-top: 10px;
+}
+
+.methodElementNameFullName{
+    color:#2e3436;
+    font-size:13px;
+}
+
+a{
+    color:#555555;
+    display:inline-block;
+    word-wrap: break-word;
+
+}
+
+a:hover{
+    color:#ff6633;
+}
+
+.public_method_link{
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.public_method_link:hover{
+    text-decoration: underline;
+}
+
+.public_method_link2{
+    text-decoration: none;
+    font-weight: bold;
+    color:#ff6633;
+    margin-top: 8px;
+}
+
+.public_method_link2:hover{
+    color:#555555;
+    text-decoration: underline;
+}
+
+#projectTags{
+    margin-bottom: 30px;
+}
+
+.methodDescriptionParamName{
+    color:#ff6633;
+}
+
+.methodDescriptionParamType{
+    color:#555555;
+}
+
+ul{
+    list-style: none;
+}
+
+li:before{
+    content: "• ";
+    color:#ff6633;
+}
+
+#publicMethods{
+    padding-top: 30px;
+    border-top: solid 1px #eaebe6;
+}
+
+.credits{
+    font-size: 14px;
+    margin-top: 100px;
+    color:#2e3436;
+    margin-bottom: 30px;
+}
+
+.credits a:hover{
+    background-color:#ff6633;
+    color: white;
+    padding: 3px;
+}
+
+.credits a{
+    color:#ff6633;
+    background-color: white;
+    padding: 3px;
+}
+
+.methodDescription{
+    color:#ff6633;
+    font-style: normal;
+}
+
+.ancora_top{
+    border: 1px solid #ccc;
+    color: #ccc;
+    display: inline-block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 16px;
+    padding: 0 2px;
+    text-decoration: none;
+    margin-bottom: 1px;
+    display: none;
+}
+
+#mainBlock{
+    display: none;
+}
