@@ -1,0 +1,27 @@
+---
+engines:
+  duplication:
+    enabled: false
+    config:
+      languages:
+      - javascript
+      - php
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: false
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "PSR1,PSR2"
+ratings:
+  paths:
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+exclude_paths:
+- tests/
+- examples/
+- docs/
