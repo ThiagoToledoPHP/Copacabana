@@ -31,6 +31,9 @@ class Copacabana
     /** @var boolean $isCamelCase Camel Case option */
     private $isCamelCase;
 
+    /** @var array $dynamicControllersArray Camel Case option */
+    private $dynamicControllersArray;
+
     /**
      * Copacabana constructor.
      * In $appName you must use the same name used in the first part of the namespace of your control classes
@@ -51,6 +54,8 @@ class Copacabana
         $this->setNotFoundController("NotFound");
         $this->isCamelCase(true);
         $this->setIndexController("Index");
+
+        $this->clearDynamicControllerList();
     }
 
 
@@ -80,6 +85,30 @@ class Copacabana
     }
 
     /**
+     * Method to create add to list of dynamicControllers
+     * Example of use: in url www.example.com/dynamicValue
+     * This class send to dynamic controllers the requisition in begin
+     * $dynamicController->dynamicMethod(dynamicValue) to evaluate
+     * if all the controllers respond false, the Copacabana class call the class dynamicValue->mainMethod
+     *
+     * @param object $controllerObject Controller Object to Add to List of dynamic COntrollers
+     * @param string $methodNameCall The method name call dynamic. Need return boolen value
+     */
+    public function addDynamicControllerToList($controllerObject, $methodNameCall)
+    {
+        $this->dynamicControllersArray[$methodNameCall] = $controllerObject;
+    }
+
+    /**
+     *  Clear the list of Dynamic Controllers
+     */
+    public function clearDynamicControllerList()
+    {
+        $this->dynamicControllersArray = array();
+    }
+
+
+    /**
      * Used to determine the method Name in controller class to respond to app requests
      * @param $mainMethodController The method name used in your controller class to respond to app requests
      */
@@ -99,7 +128,7 @@ class Copacabana
 
     /**
      * Use to determine if you use or not to Camel Case in your controllers
-     * If set true, automatically automatically includes the first letter to uppercase the url requests control classes
+     * If set true, automatically automatically includes first letter to uppercase the url requests control classes
      * Pedagogic example: in example url: www.test.com/example the class file and name Example is request
      * @param boolean $isCamelCase Determine if you use or not to Camel Case in your controllers class
      */
@@ -131,39 +160,53 @@ class Copacabana
 
             //If send more than one url arg...
             if (is_array($arrayGetArgs) && sizeof($arrayGetArgs) > 0) {
-                if ($this->isCamelCase === false) {
-                    $controllerClassFileName = $arrayGetArgs[0];
-                } else {
-                    $controllerClassFileName = ucfirst($arrayGetArgs[0]);
+                $useDynamicController = false;
+
+                //Check for dynamic Controller
+                if (sizeof($this->dynamicControllersArray) > 0) {
+                    foreach ($this->dynamicControllersArray as $dynamicMethod => $dynamicObject) {
+                        if ($useDynamicController === false &&
+                            $dynamicObject->$dynamicMethod($arrayGetArgs) === true) {
+                            $useDynamicController = true;
+                        }
+                    }
                 }
 
+                if ($useDynamicController === false) {
+                    if ($this->isCamelCase === false) {
+                        $controllerClassFileName = $arrayGetArgs[0];
+                    } else {
+                        $controllerClassFileName = ucfirst($arrayGetArgs[0]);
+                    }
 
 
-                //The project search for a file with the arg data, position zero, first caracter Caps
-                $urlFile = $this->dirControllers.$controllerClassFileName.".php";
+                    //The project search for a file with the arg data, position zero, first caracter Caps
+                    $urlFile = $this->dirControllers . $controllerClassFileName . ".php";
 
 
-                //File exists
-                if (is_file($urlFile)) {
-                    $finalClassName = $this->appName."\\".str_replace("/", "\\", $this->dirControllers).
-                        $controllerClassFileName;
+                    //File exists
+                    if (is_file($urlFile)) {
+                        $finalClassName = $this->appName . "\\" . str_replace("/", "\\", $this->dirControllers) .
+                            $controllerClassFileName;
 
-                    //Instanciate and send via param all the get data send in array format. use the main method
-                    $$controllerClassFileName = new $finalClassName();
-                    $$controllerClassFileName->{$this->mainMethodController}($arrayGetArgs);
+                        //Instanciate and send via param all the get data send in array format. use the main method
+                        $$controllerClassFileName = new $finalClassName();
+                        $$controllerClassFileName->{$this->mainMethodController}($arrayGetArgs);
 
-                    //If don't exists a file, the system use the not found class (Controller)
-                } else {
-                    $notFoundClassName = $this->notFoundController;
-                    $finalNotFoundClassName = $this->appName."\\".str_replace("/", "\\", $this->dirControllers).
-                        $this->notFoundController;
+                        //If don't exists a file, the system use the not found class (Controller)
+                    } else {
+                        $notFoundClassName = $this->notFoundController;
+                        $finalNotFoundClassName = $this->appName . "\\" .
+                            str_replace("/", "\\", $this->dirControllers) .
+                            $this->notFoundController;
 
-                    $$notFoundClassName = new $finalNotFoundClassName();
+                        $$notFoundClassName = new $finalNotFoundClassName();
 
-                    //Using the main method
-                    $$notFoundClassName->{$this->mainMethodController}();
+                        //Using the main method
+                        $$notFoundClassName->{$this->mainMethodController}();
 
-                    // add records to the log
+                        // add records to the log
+                    }
                 }
             } else {
                 //Log a bad requisition, saving the anormal data

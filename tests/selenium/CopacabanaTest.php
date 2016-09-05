@@ -24,27 +24,33 @@ class LoginTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->setBrowserUrl('http://www.example.com/');
     }
 
-    public function testTitle()
-    {
-        $this->url('http://www.example.com/');
-        $this->assertEquals('Example Domain', $this->title());
-    }
-
 
     /**
-     * Simple test title
+     * Simple return index controller test
      */
-
-    public function testTitle2()
+    public function testReturnIndexController()
     {
         $this->url(URL_SELENIUM_ACCESS);
-        $this->assertEquals(':)', $this->byId('smile')->text());
+        $this->assertEquals('IndexController', $this->byId('return')->text());
     }
 
-    public function testTitle3()
+    public function testReturnNotFoundController()
     {
         $this->url(URL_SELENIUM_ACCESS."?url=t");
-        $this->assertEquals(':P', $this->byId('smile')->text());
+        $this->assertEquals('NotFoundController', $this->byId('return')->text());
+    }
+
+    public function testReturnExampleController()
+    {
+        $this->url(URL_SELENIUM_ACCESS."?url=example");
+        $this->assertEquals('ExampleController', $this->byId('return')->text());
+    }
+
+    public function testReturnDynamicController()
+    {
+        $randowTestUrl = md5(date("YmdHis"))."page";
+        $this->url(URL_SELENIUM_ACCESS."?url=".$randowTestUrl);
+        $this->assertEquals($randowTestUrl, $this->byId('return')->text());
     }
 
 

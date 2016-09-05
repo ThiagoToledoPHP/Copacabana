@@ -6,7 +6,7 @@ namespace TestCopacabana\app\Controllers{
     {
 
         public function main(){
-            echo "<html><body><span id='smile'>:P</span></body></html>";
+            echo "<html><body><span id='return'>NotFoundController</span></body></html>";
         }
 
     }
