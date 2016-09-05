@@ -8,7 +8,7 @@ Based on this I created a class that has the main purpose of enabling you to cre
 **Installing**
 
 To get started, simply use the composer to import a example application using the comand:
-`composer create-project thiagotoledo/copacabanaexample:1.0 CopacabanaExample`
+`composer create-project thiagotoledo/copacabanaexample:2.0 CopacabanaExample`
 
 **Dependences**
 
