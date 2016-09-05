@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="API Documentation" version="2.8.5">
   <partials/>
-  <file path="Copacabana.php" generated-path="Copacabana.html" hash="7bf24be2c089e4091768981be4ff60de" package="Default">
+  <file path="Copacabana.php" generated-path="Copacabana.html" hash="7b49cc3ce2c2bfb4d51cb294baa91ee6" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -91,17 +91,29 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="44" package="Copacabana\helpers">
+      <property static="false" visibility="private" namespace="Copacabana\helpers" line="35" package="Copacabana\helpers">
+        <name>$dynamicControllersArray</name>
+        <full_name>\Copacabana\helpers\Copacabana::dynamicControllersArray</full_name>
+        <default></default>
+        <docblock line="35">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="35" description="&lt;p&gt;Camel Case option&lt;/p&gt;" type="array" variable="$dynamicControllersArray">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="47" package="Copacabana\helpers">
         <name>__construct</name>
         <full_name>\Copacabana\helpers\Copacabana::__construct()</full_name>
-        <docblock line="44">
+        <docblock line="47">
           <description>Copacabana constructor.</description>
           <long-description>In $appName you must use the same name used in the first part of the namespace of your control classes
 to Copacabana dynamically call them in your application using Composer.
 Simple pedagogic example:
 if you use $appName = "Copacabana"
 in composer file (autoload / psr-4) you can use: "Copacabana\\helpers\\": "app/Helpers/"</long-description>
-          <tag name="param" line="44" description="&lt;p&gt;The name of your app. The first part of composer namespace class.&lt;/p&gt;" type="string" variable="$appName">
+          <tag name="param" line="47" description="&lt;p&gt;The name of your app. The first part of composer namespace class.&lt;/p&gt;" type="string" variable="$appName">
             <type>string</type>
           </tag>
         </docblock>
@@ -111,13 +123,13 @@ in composer file (autoload / psr-4) you can use: "Copacabana\\helpers\\": "app/H
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="61" package="Copacabana\helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="66" package="Copacabana\helpers">
         <name>setAppName</name>
         <full_name>\Copacabana\helpers\Copacabana::setAppName()</full_name>
-        <docblock line="61">
+        <docblock line="66">
           <description>Determine the app name</description>
           <long-description></long-description>
-          <tag name="param" line="61" description="&lt;p&gt;The name of your app. The first part of composer namespace class.&lt;/p&gt;" type="string" variable="$appName">
+          <tag name="param" line="66" description="&lt;p&gt;The name of your app. The first part of composer namespace class.&lt;/p&gt;" type="string" variable="$appName">
             <type>string</type>
           </tag>
         </docblock>
@@ -127,10 +139,10 @@ in composer file (autoload / psr-4) you can use: "Copacabana\\helpers\\": "app/H
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="77" package="Copacabana\helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="82" package="Copacabana\helpers">
         <name>setDirControllers</name>
         <full_name>\Copacabana\helpers\Copacabana::setDirControllers()</full_name>
-        <docblock line="77">
+        <docblock line="82">
           <description>This method is used to set the directory of your controllers class.</description>
           <long-description>Example of bars format: "app/Controllers/"
 Important: They should also be in the declaration of its namespace in the composer file
@@ -138,7 +150,7 @@ Simple pedagogic example:
 if you use $dirControllers = "app/Controllers/"
 in composer file (autoload / psr-4) you can use:
 "Copacabana\\app\\Controllers\\": "yourDirNameIfYouNeed/app/Controllers/"</long-description>
-          <tag name="param" line="77" description="&lt;p&gt;The directory way to your controllers&lt;/p&gt;" type="string" variable="$dirControllers">
+          <tag name="param" line="82" description="&lt;p&gt;The directory way to your controllers&lt;/p&gt;" type="string" variable="$dirControllers">
             <type>string</type>
           </tag>
         </docblock>
@@ -148,13 +160,49 @@ in composer file (autoload / psr-4) you can use:
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="86" package="Copacabana\helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="97" package="Copacabana\helpers">
+        <name>addDynamicControllerToList</name>
+        <full_name>\Copacabana\helpers\Copacabana::addDynamicControllerToList()</full_name>
+        <docblock line="97">
+          <description>Method to create add to list of dynamicControllers
+Example of use: in url www.example.com/dynamicValue
+This class send to dynamic controllers the requisition in begin
+$dynamicController-&gt;dynamicMethod(dynamicValue) to evaluate
+if all the controllers respond false, the Copacabana class call the class dynamicValue-&gt;mainMethod</description>
+          <long-description></long-description>
+          <tag name="param" line="97" description="&lt;p&gt;Controller Object to Add to List of dynamic COntrollers&lt;/p&gt;" type="object" variable="$controllerObject">
+            <type>object</type>
+          </tag>
+          <tag name="param" line="97" description="&lt;p&gt;The method name call dynamic. Need return boolen value&lt;/p&gt;" type="string" variable="$methodNameCall">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$controllerObject</name>
+          <default></default>
+          <type>object</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$methodNameCall</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="105" package="Copacabana\helpers">
+        <name>clearDynamicControllerList</name>
+        <full_name>\Copacabana\helpers\Copacabana::clearDynamicControllerList()</full_name>
+        <docblock line="105">
+          <description>Clear the list of Dynamic Controllers</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="115" package="Copacabana\helpers">
         <name>setMainControllers</name>
         <full_name>\Copacabana\helpers\Copacabana::setMainControllers()</full_name>
-        <docblock line="86">
+        <docblock line="115">
           <description>Used to determine the method Name in controller class to respond to app requests</description>
           <long-description></long-description>
-          <tag name="param" line="86" description="&lt;p&gt;The method name used in your controller class to respond to app requests&lt;/p&gt;" type="" variable="$mainMethodController"/>
+          <tag name="param" line="115" description="&lt;p&gt;The method name used in your controller class to respond to app requests&lt;/p&gt;" type="" variable="$mainMethodController"/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$mainMethodController</name>
@@ -162,13 +210,13 @@ in composer file (autoload / psr-4) you can use:
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="95" package="Copacabana\helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="124" package="Copacabana\helpers">
         <name>setNotFoundController</name>
         <full_name>\Copacabana\helpers\Copacabana::setNotFoundController()</full_name>
-        <docblock line="95">
+        <docblock line="124">
           <description>Use to determine the controller class Name to respond not found requests</description>
           <long-description></long-description>
-          <tag name="param" line="95" description="&lt;p&gt;The class name to 404 requests&lt;/p&gt;" type="string" variable="$notFoundController">
+          <tag name="param" line="124" description="&lt;p&gt;The class name to 404 requests&lt;/p&gt;" type="string" variable="$notFoundController">
             <type>string</type>
           </tag>
         </docblock>
@@ -178,15 +226,15 @@ in composer file (autoload / psr-4) you can use:
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="106" package="Copacabana\helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="135" package="Copacabana\helpers">
         <name>isCamelCase</name>
         <full_name>\Copacabana\helpers\Copacabana::isCamelCase()</full_name>
-        <docblock line="106">
+        <docblock line="135">
           <description>Use to determine if you use or not to Camel Case in your controllers
-If set true, automatically automatically includes the first letter to uppercase the url requests control classes
+If set true, automatically automatically includes first letter to uppercase the url requests control classes
 Pedagogic example: in example url: www.test.com/example the class file and name Example is request</description>
           <long-description></long-description>
-          <tag name="param" line="106" description="&lt;p&gt;Determine if you use or not to Camel Case in your controllers class&lt;/p&gt;" type="boolean" variable="$isCamelCase">
+          <tag name="param" line="135" description="&lt;p&gt;Determine if you use or not to Camel Case in your controllers class&lt;/p&gt;" type="boolean" variable="$isCamelCase">
             <type>boolean</type>
           </tag>
         </docblock>
@@ -196,13 +244,13 @@ Pedagogic example: in example url: www.test.com/example the class file and name 
           <type>boolean</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="115" package="Copacabana\helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="144" package="Copacabana\helpers">
         <name>setIndexController</name>
         <full_name>\Copacabana\helpers\Copacabana::setIndexController()</full_name>
-        <docblock line="115">
+        <docblock line="144">
           <description>Used to determine the method Name in controller class to respond to index requests</description>
           <long-description></long-description>
-          <tag name="param" line="115" description="&lt;p&gt;The method name used in your controller class to respond to index requests&lt;/p&gt;" type="" variable="$indexController"/>
+          <tag name="param" line="144" description="&lt;p&gt;The method name used in your controller class to respond to index requests&lt;/p&gt;" type="" variable="$indexController"/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$indexController</name>
@@ -210,10 +258,10 @@ Pedagogic example: in example url: www.test.com/example the class file and name 
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="123" package="Copacabana\helpers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Copacabana\helpers" line="152" package="Copacabana\helpers">
         <name>listen</name>
         <full_name>\Copacabana\helpers\Copacabana::listen()</full_name>
-        <docblock line="123">
+        <docblock line="152">
           <description>Method used to start router the app requisitions</description>
           <long-description></long-description>
         </docblock>
@@ -222,7 +270,7 @@ Pedagogic example: in example url: www.test.com/example the class file and name 
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
     </parse_markers>
-    <source>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</source>
+    <source>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</source>
   </file>
   <package name="Copacabana" full_name="Copacabana">
     <package name="helpers" full_name="Copacabana\helpers"/>
