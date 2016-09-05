@@ -5,9 +5,9 @@ namespace Copacabana\helpers;
 /**
  * Light Stalk Composer Framework Class
  *
+ * @link https://github.com/ThiagoToledoPHP/Copacabana
  * @autor Thiago Toledo
  * @email javaephp@gmail.com
- * @link https://github.com/ThiagoToledoPHP/Copacabana
  * @package Copacabana\helpers
  */
 class Copacabana
